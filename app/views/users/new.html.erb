@@ -1,0 +1,22 @@
+<h2> Sign Up </h2>
+
+<p> All ready have an account sign in here
+  <%= link_to "Sign In", new_session_path %>
+</p>
+
+<%= form_for @user do |form| %>
+
+  <%= render partial: "form_errors/errors", locals: {object: @user} %>
+
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+  <div>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+  <div>
+    <%= form.submit "Sign up" %>
+  </div>
+<% end %>

@@ -26,6 +26,7 @@ module Blogz
       generate.stylesheets false
       generate.test_framework :rspec
       generate.view_specs false
+      generate.factory_girl false
     end
 
     config.action_controller.action_on_unpermitted_parameters = :raise

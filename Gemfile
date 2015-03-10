@@ -24,6 +24,8 @@ gem "simple_form"
 gem "title"
 gem "uglifier"
 gem "unicorn"
+gem 'monban'
+gem 'monban-generators'
 
 group :development do
   gem "spring"
