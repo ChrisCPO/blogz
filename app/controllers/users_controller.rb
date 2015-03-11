@@ -16,10 +16,27 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find(params[:id])
+    @user.update(update_params)
+
+    if @user.save
+      redirect_to dashboard_path
+    else
+      render edit
+    end
+  end
+
   private
 
   def user_params
     params.require(:user).permit(:email, :password)
   end
-end
 
+  def update_params
+    params.require(:user).permit(
+                                 :email,
+                                 :twitter_handel,
+                                 :github_handel)
+  end
+end
