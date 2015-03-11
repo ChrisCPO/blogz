@@ -1,0 +1,23 @@
+<h2> Edit </h2>
+
+<%= form_for current_user do |form| %>
+
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :twitter_handel %>
+    twitter.com/<%= form.text_field :twitter_handel %>
+  </div>
+
+  <div>
+    <%= form.label :github_handel %>
+    github.com/<%= form.text_field :github_handel %>
+  </div>
+
+  <div>
+    <%= form.submit "Save" %>
+  </div>
+<% end %>

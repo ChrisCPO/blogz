@@ -12,6 +12,8 @@ module Features
   include Formulaic::Dsl
 end
 
+Monban.test_mode!
+
 RSpec.configure do |config|
   config.include Features, type: :feature
   config.infer_base_class_for_anonymous_controllers = false
