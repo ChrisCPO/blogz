@@ -2,6 +2,8 @@
 
 <%= form_for current_user do |form| %>
 
+  <%= render partial: "form_errors/errors", locals: {object: current_user} %>
+
   <div>
     <%= form.label :email %>
     <%= form.email_field :email %>

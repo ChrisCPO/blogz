@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :password_digest, presence: true
 
+  has_many :posts
+
   def handels
     [self.twitter_handel, self.github_handel]
   end

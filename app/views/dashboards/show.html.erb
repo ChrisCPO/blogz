@@ -1,4 +1,7 @@
 <h2> Your dashboard </h2>
+
+<%= link_to "New Post", new_post_path(current_user) %>
+
 <%= link_to "Edit Info", edit_user_path(current_user) %>
 
 <%= render partial: "links/link", collection: current_user.web_links %>
