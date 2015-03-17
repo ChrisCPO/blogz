@@ -1,6 +1,10 @@
 require "rails_helper"
 
 RSpec.describe User, type: :model do
+  describe "Relationships" do
+    it { is_expected.to have_many(:posts) }
+  end
+
   describe "#links" do
     it "returns handles for github and twitter" do
       user = create(:user)
