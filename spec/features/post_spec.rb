@@ -5,16 +5,19 @@ feature "Post" do
     user = create(:user)
     title = "New Title here"
     content = "I'm a new Post"
+    tag = "Thisisthetag"
 
     sign_in(user)
     visit dashboard_path
     click_link "New Post"
+    fill_in "Tags", with: tag
     fill_in "Title", with: title
     fill_in "Content", with: content
     click_button "Post"
 
     expect(page).to have_text title
     expect(page).to have_text content
+    expect(page).to have_text tag
   end
 
   scenario "Post is invaild" do
