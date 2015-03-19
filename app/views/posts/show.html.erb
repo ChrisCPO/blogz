@@ -1,13 +1,1 @@
-<h2> <%= @post.title %> </h2>
-
-<div class="time">
-  <%= @post.created_at.strftime("%d %m %Y") %>
-</div>
-
-<div class="tags">
-  <%= render partial: "tag", collection: @post.tags %>
-</div>
-
-<div class="post-content">
-  <%= @post.content %>
-</div>
+<%= render @post %>

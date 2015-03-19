@@ -18,4 +18,24 @@ RSpec.describe Post, :type => :model do
       expect(post.tag_list).to include "Thing"
     end
   end
+
+  describe "#author_date" do
+    it "returns date created at" do
+      post = create(:post)
+
+      post_time = post.created_at
+      answer = post_time.strftime("%d %m %Y")
+
+      expect(post.author_date).to eq answer
+    end
+  end
+
+  describe "#preview" do
+    it "returns preview" do
+      post = create(:post)
+      answer = post.content[0..25] + "..."
+
+      expect(post.preview).to eq answer
+    end
+  end
 end

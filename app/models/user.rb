@@ -9,6 +9,13 @@ class User < ActiveRecord::Base
   end
 
   def web_links
-    ["http://www.twitter.com/#{twitter_handel}", "http://www.github.com/#{github_handel}"]
+    [
+     "http://www.twitter.com/#{twitter_handel}",
+     "http://www.github.com/#{github_handel}"
+    ]
+  end
+
+  def add_post(post)
+    self.posts << post
   end
 end

@@ -21,7 +21,7 @@
 
 <div class="user-nav">
   <% if signed_in? %>
-    Welcome <%= current_user.email %>
+    Welcome <%= link_to current_user.email, dashboard_path %>
     <%= link_to "Sign out", session_path, method: :delete %>
   <% else %>
     <%= link_to "Sign in", new_session_path %>
