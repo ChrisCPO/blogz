@@ -7,8 +7,6 @@ class SearchController < ApplicationController
 
     if @posts
       render :show
-    else
-      redirect_to :back
     end
   end
 end
