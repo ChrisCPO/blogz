@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    current_user.posts << @post
 
     if @post.save
       redirect_to @post
@@ -15,6 +16,11 @@ class PostsController < ApplicationController
 
   def show
     @post = find_post
+  end
+
+  def index
+    @posts = current_user.posts
+    @params = params
   end
 
   private

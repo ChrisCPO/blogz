@@ -1,0 +1,15 @@
+<li>
+  <h3><%= link_to preview.title, post_path(preview) %> </h3>
+
+  <div class="time">
+    published on <%= preview.author_date %>
+  </div>
+
+  <div class="tags">
+    <%= render partial: "posts/tag", collection: preview.tags %>
+  </div>
+
+  <div class="post-content">
+    <%= preview.preview %>
+  </div>
+</li>

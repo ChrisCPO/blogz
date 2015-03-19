@@ -26,4 +26,15 @@ RSpec.describe User, type: :model do
       expect(user.web_links).to include "http://www.github.com/test_github"
     end
   end
+
+  describe "#add_post" do
+    it "returns links for github and twitter" do
+      user = create(:user)
+      post = create(:post)
+
+      user.add_post(post)
+
+      expect(user.posts).to include post
+    end
+  end
 end

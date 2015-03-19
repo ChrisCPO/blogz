@@ -1,0 +1,13 @@
+<h2> <%= post.title %> </h2>
+
+<div class="time">
+  published on <%= post.author_date %>
+</div>
+
+<div class="tags">
+  <%= render partial: "posts/tag", collection: post.tags %>
+</div>
+
+<div class="post-content">
+  <%= post.content %>
+</div>
